@@ -3,6 +3,7 @@
 /local.properties
 /node_modules
 /dist
+/.deploy-temp
 /.dev-env
 *.tsbuildinfo
 vite.config.js

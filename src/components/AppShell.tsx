@@ -9,12 +9,17 @@ type AppShellProps = {
 };
 
 export function AppShell({ activeTab, onChangeTab, children }: AppShellProps) {
+  const mascotSrc = `${import.meta.env.BASE_URL}icons/icon-192.png`;
+
   return (
     <div className="app-shell">
       <header className="topbar">
-        <div>
+        <div className="topbar-content">
+          <div>
           <p className="eyebrow">Personal Offline PWA</p>
-          <h1>离线麻将记账</h1>
+            <h1>1102麻将大赛</h1>
+          </div>
+          <img className="topbar-mascot" src={mascotSrc} alt="1102吉祥物" />
         </div>
       </header>
       <main className="page-container">{children}</main>

@@ -12,9 +12,9 @@ export function HomePage({ state }: HomePageProps) {
     <section className="stack">
       <div className="hero-card">
         <p className="eyebrow">完全本地</p>
-        <h2>个人麻将记账工具</h2>
+        <h2>1102麻将大赛</h2>
         <p>
-          数据只保存在当前浏览器，不需要登录、不需要服务器，也能作为 PWA 安装到安卓桌面。
+          1102麻将
         </p>
       </div>
 

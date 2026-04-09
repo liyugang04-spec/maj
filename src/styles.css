@@ -49,6 +49,22 @@ button {
   max-width: 920px;
 }
 
+.topbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+
+.topbar-mascot {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  border: 1px solid rgba(23, 59, 45, 0.18);
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(45, 35, 18, 0.16);
+}
+
 .topbar h1,
 .hero-card h2,
 .panel h2,
@@ -366,6 +382,11 @@ button {
 }
 
 @media (max-width: 640px) {
+  .topbar-mascot {
+    width: 50px;
+    height: 50px;
+  }
+
   .form-grid,
   .form-grid.compact {
     grid-template-columns: 1fr;

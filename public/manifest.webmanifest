@@ -1,7 +1,7 @@
 {
-  "name": "离线麻将记账",
+  "name": "1102麻将大赛",
   "short_name": "麻将记账",
-  "description": "个人本地离线麻将记账工具",
+  "description": "1102麻将",
   "theme_color": "#173b2d",
   "background_color": "#f3ecde",
   "display": "standalone",

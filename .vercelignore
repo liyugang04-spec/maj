@@ -1,0 +1,12 @@
+.git
+.gitignore
+.vercel
+.vscode
+.dev-env
+node_modules
+dist
+app
+scripts
+build.gradle.kts
+settings.gradle.kts
+gradle.properties

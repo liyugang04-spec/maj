@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "android: setup local toolchain",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "scripts/setup-local-android-env.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "android: create/start emulator",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "scripts/create-and-start-avd.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "android: generate gradle wrapper",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". .\\scripts\\use-local-android-env.ps1; if (!(Test-Path .dev-env\\gradle-8.7\\bin\\gradle.bat)) { Invoke-WebRequest -Uri https://services.gradle.org/distributions/gradle-8.7-bin.zip -OutFile .dev-env\\downloads\\gradle-8.7-bin.zip; Expand-Archive .dev-env\\downloads\\gradle-8.7-bin.zip -DestinationPath .dev-env -Force }; .\\.dev-env\\gradle-8.7\\bin\\gradle.bat wrapper --gradle-version 8.7"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "android: build debug",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". .\\scripts\\use-local-android-env.ps1; .\\gradlew.bat assembleDebug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "dependsOn": "android: generate gradle wrapper"
+    },
+    {
+      "label": "android: install debug",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". .\\scripts\\use-local-android-env.ps1; .\\gradlew.bat installDebug"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    },
+    {
+      "label": "android: launch app",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". .\\scripts\\use-local-android-env.ps1; adb shell am start -n com.majiang.offline/.MainActivity"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
+    }
+  ]
+}

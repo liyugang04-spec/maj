@@ -271,19 +271,19 @@ export function CurrentGamePage({
             <div className="dice-rule-list compact">
               <div className="dice-rule-row">
                 <strong>1 / 5 / 9</strong>
-                <span>庄家这边</span>
+                <span>本</span>
               </div>
               <div className="dice-rule-row">
                 <strong>2 / 6 / 10</strong>
-                <span>庄家的下家</span>
+                <span>下</span>
               </div>
               <div className="dice-rule-row">
                 <strong>3 / 7 / 11</strong>
-                <span>庄家的对家</span>
+                <span>对</span>
               </div>
               <div className="dice-rule-row">
                 <strong>4 / 8 / 12</strong>
-                <span>庄家的上家</span>
+                <span>上</span>
               </div>
             </div>
           </article>

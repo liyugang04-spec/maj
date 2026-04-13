@@ -154,6 +154,28 @@ export function CurrentGamePage({
             </div>
           </article>
 
+          <article className="panel dice-rule-card">
+            <h3>甩筛定位</h3>
+            <div className="dice-rule-list">
+              <div className="dice-rule-row">
+                <strong>1 / 5 / 9</strong>
+                <span>庄家这边</span>
+              </div>
+              <div className="dice-rule-row">
+                <strong>2 / 6 / 10</strong>
+                <span>庄家的下家</span>
+              </div>
+              <div className="dice-rule-row">
+                <strong>3 / 7 / 11</strong>
+                <span>庄家的对家</span>
+              </div>
+              <div className="dice-rule-row">
+                <strong>4 / 8 / 12</strong>
+                <span>庄家的上家</span>
+              </div>
+            </div>
+          </article>
+
           <article className="panel">
             <h3>本轮录入</h3>
             <div className="round-input-grid">

@@ -279,6 +279,38 @@ button {
   gap: 12px;
 }
 
+.dice-rule-card {
+  background:
+    linear-gradient(180deg, rgba(255, 249, 239, 0.98) 0%, rgba(255, 245, 227, 0.95) 100%);
+}
+
+.dice-rule-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.dice-rule-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255, 252, 246, 0.92);
+  border: 1px solid rgba(23, 59, 45, 0.1);
+}
+
+.dice-rule-row strong {
+  font-size: 1.05rem;
+  color: #173b2d;
+}
+
+.dice-rule-row span {
+  color: #6f6757;
+  text-align: right;
+}
+
 .mini-stat,
 .player-card {
   border: 1px solid rgba(23, 59, 45, 0.12);
@@ -398,5 +430,14 @@ button {
 
   .player-score-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .dice-rule-row {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .dice-rule-row span {
+    text-align: left;
   }
 }

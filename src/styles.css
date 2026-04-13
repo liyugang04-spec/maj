@@ -284,10 +284,21 @@ button {
     linear-gradient(180deg, rgba(255, 249, 239, 0.98) 0%, rgba(255, 245, 227, 0.95) 100%);
 }
 
+.dice-rule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
 .dice-rule-list {
   display: grid;
   gap: 10px;
   margin-top: 14px;
+}
+
+.dice-rule-list.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .dice-rule-row {
@@ -299,6 +310,7 @@ button {
   border-radius: 18px;
   background: rgba(255, 252, 246, 0.92);
   border: 1px solid rgba(23, 59, 45, 0.1);
+  min-height: 78px;
 }
 
 .dice-rule-row strong {
@@ -430,6 +442,10 @@ button {
 
   .player-score-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .dice-rule-list.compact {
+    grid-template-columns: 1fr;
   }
 
   .dice-rule-row {
